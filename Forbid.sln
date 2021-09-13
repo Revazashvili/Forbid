@@ -1,8 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8094CBBD-C69E-4A81-B32F-88619E3627C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forbid", "src\Forbid\Forbid.csproj", "{EC746E9B-210D-4659-A8B5-08F8F0C571CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC746E9B-210D-4659-A8B5-08F8F0C571CC} = {8094CBBD-C69E-4A81-B32F-88619E3627C3}
 	EndGlobalSection
 EndGlobal
