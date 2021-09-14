@@ -5,7 +5,7 @@ namespace Forbid
     /// <summary>
     /// A collection of Zero forbid methods for decimal as extension methods.
     /// </summary>
-    public static class ForbidDecimalZeroExtensions
+    public static class ForbidZeroDecimalExtensions
     {
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is zero.

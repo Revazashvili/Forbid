@@ -3,17 +3,17 @@
 namespace Forbid
 {
     /// <summary>
-    /// A collection of Negative forbid methods for double as extension methods.
+    /// A collection of Negative forbid methods for float as extension methods.
     /// </summary>
-    public static class ForbidDoubleNegativeExtensions
+    public static class ForbidNegativeFloatExtensions
     {
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is negative.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
-        /// <returns><see cref="double"/> input.</returns>
-        public static double Negative(this IForbid forbid, double input) => ForbidNegativeDefault.Negative(input);
+        /// <returns><see cref="float"/> input.</returns>
+        public static float Negative(this IForbid forbid, float input) => ForbidNegativeDefault.Negative(input);
 
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is negative.
@@ -21,8 +21,8 @@ namespace Forbid
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception.</param>
-        /// <returns><see cref="double"/> input.</returns>
-        public static double Negative(this IForbid forbid, double input, string message) =>
+        /// <returns><see cref="float"/> input.</returns>
+        public static float Negative(this IForbid forbid, float input, string message) =>
             ForbidNegativeDefault.Negative(input, message);
 
         /// <summary>
@@ -31,8 +31,8 @@ namespace Forbid
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
-        /// <returns><see cref="double"/> input.</returns>
-        public static double Negative(this IForbid forbid, double input, Exception exception) =>
+        /// <returns><see cref="float"/> input.</returns>
+        public static float Negative(this IForbid forbid, float input, Exception exception) =>
             ForbidNegativeDefault.Negative(input, null, exception);
     }
 }
