@@ -2,6 +2,9 @@
 
 namespace Forbid
 {
+    /// <summary>
+    /// A collection of Null forbid methods as extension methods.
+    /// </summary>
     public static class ForbidNullExtensions
     {
         /// <summary>

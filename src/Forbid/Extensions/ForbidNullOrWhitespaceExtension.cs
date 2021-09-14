@@ -4,6 +4,9 @@ using static System.String;
 
 namespace Forbid
 {
+    /// <summary>
+    /// A collection of NullOrWhitespace forbid methods as extension methods.
+    /// </summary>
     public static class ForbidNullOrWhitespaceExtension
     {
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace Forbid
 {
+    /// <summary>
+    /// A collection of methods for throwing some kind of <see cref="Exception"/>.
+    /// </summary>
     internal static class Thrower
     {
         /// <summary>
