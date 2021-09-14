@@ -8,7 +8,7 @@ namespace Forbid
     public static class ForbidPositiveLongExtensions
     {
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is positive.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is positive.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -16,7 +16,7 @@ namespace Forbid
         public static long Positive(this IForbid forbid, long input) => ForbidPositiveDefault.Positive(input);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is positive.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is positive.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -26,7 +26,7 @@ namespace Forbid
             ForbidPositiveDefault.Positive(input, message);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is positive.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is positive.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>

@@ -16,7 +16,7 @@ namespace Forbid
         /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
-        /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
+        /// <exception cref="ArgumentException"><see cref="Exception"/> which will be thrown if input is null.</exception>
         internal static T Zero<T>(T input, string? message = null, Exception? exception = null) where T : struct
         {
             Forbid.From.Null(input);

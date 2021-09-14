@@ -8,7 +8,7 @@ namespace Forbid
     public static class ForbidZeroDoubleExtensions
     {
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is zero.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is zero.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -16,7 +16,7 @@ namespace Forbid
         public static double Zero(this IForbid forbid, double input) => ForbidZeroDefault.Zero(input);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is zero.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is zero.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -26,7 +26,7 @@ namespace Forbid
             ForbidZeroDefault.Zero(input, message);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is zero.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is zero.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>

@@ -8,7 +8,7 @@ namespace Forbid
     public static class ForbidNegativeDecimalExtensions
     {
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is negative.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -16,7 +16,7 @@ namespace Forbid
         public static decimal Negative(this IForbid forbid, decimal input) => ForbidNegativeDefault.Negative(input);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is negative.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
@@ -26,7 +26,7 @@ namespace Forbid
             ForbidNegativeDefault.Negative(input, message);
 
         /// <summary>
-        /// Throws <see cref="ArgumentNullException"/> if <paramref name="input"/> is negative.
+        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative.
         /// </summary>
         /// <param name="forbid"><see cref="IForbid"/> interface.</param>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
