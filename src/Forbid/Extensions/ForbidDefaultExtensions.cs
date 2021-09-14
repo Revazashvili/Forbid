@@ -9,7 +9,7 @@ namespace Forbid
     public static class ForbidDefaultExtensions
     {
         /// <summary>
-        /// Uses <see cref="EqualityComparer{T}"/> to check input value is default or not and throws <see cref="Exception"/>.
+        /// Uses <see cref="EqualityComparer{T}"/> to check if input value is default or not and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="x">The first parameter to compare.</param>
         /// <param name="y">The second parameter to compare.</param>
@@ -28,7 +28,7 @@ namespace Forbid
         }
         
         /// <summary>
-        /// Uses <see cref="EqualityComparer{T}"/> to check input value is default or not and throws <see cref="Exception"/>.
+        /// Uses <see cref="EqualityComparer{T}"/> to check if input value is default or not and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
@@ -45,7 +45,7 @@ namespace Forbid
         }
         
         /// <summary>
-        /// Uses <see cref="IComparable"/> to check input value is positive and throws <see cref="Exception"/>.
+        /// Uses <see cref="IComparable"/> to check if input value is positive and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
@@ -61,7 +61,7 @@ namespace Forbid
         }
         
         /// <summary>
-        /// Uses <see cref="IComparable{T}"/> to check input value is negative and throws <see cref="Exception"/>.
+        /// Uses <see cref="IComparable{T}"/> to check if input value is negative and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
@@ -77,7 +77,7 @@ namespace Forbid
         }
         
         /// <summary>
-        /// Uses <see cref="IComparable{T}"/> to check input value is negative or zero and throws <see cref="Exception"/>.
+        /// Uses <see cref="IComparable{T}"/> to check if input value is negative or zero and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
@@ -91,21 +91,60 @@ namespace Forbid
             Zero(input, message, exception);
             return input;
         }
-        
+
         /// <summary>
-        /// Uses <see cref="IComparable{T}"/> to check input value is positive or zero and throws <see cref="Exception"/>.
+        /// Uses <see cref="IComparable{T}"/> to check if input value is positive or zero and throws <see cref="Exception"/>.
         /// </summary>
         /// <param name="input">The <see cref="input"/> which will be checked.</param>
         /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
         /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
-        internal static T PositiveOrZero<T>(T input, string? message = null, Exception? exception = null) where T : struct, IComparable<T>
+        internal static T PositiveOrZero<T>(T input, string? message = null, Exception? exception = null)
+            where T : struct, IComparable<T>
         {
             Forbid.From.Null(input);
             Positive(input, message, exception);
             Zero(input, message, exception);
             return input;
+        }
+
+        /// <summary>
+        /// Uses <see cref="IComparable{T}"/> to check input if value is more than second  and throws <see cref="Exception"/>.
+        /// </summary>
+        /// <param name="x">The <see cref="x"/> which will be checked.</param>
+        /// <param name="y">The parameter used to compare.</param>
+        /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
+        /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+        /// <typeparam name="T">Any type of object.</typeparam>
+        /// <returns><see cref="T"/> input.</returns>
+        public static T MoreThan<T>(T x, T y, string? message = null, Exception? exception = null)
+            where T : struct, IComparable<T>
+        {
+            Forbid.From.Null(x);
+            Forbid.From.Null(y);
+            if (x.CompareTo(y) > 0)
+                Thrower.ThrowWithPriority(nameof(x), message, exception);
+            return x;
+        }
+        
+        /// <summary>
+        /// Uses <see cref="IComparable{T}"/> to check input if value is less than second  and throws <see cref="Exception"/>.
+        /// </summary>
+        /// <param name="x">The <see cref="x"/> which will be checked.</param>
+        /// <param name="y">The parameter used to compare.</param>
+        /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
+        /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+        /// <typeparam name="T">Any type of object.</typeparam>
+        /// <returns><see cref="T"/> input.</returns>
+        public static T LessThan<T>(T x, T y, string? message = null, Exception? exception = null)
+            where T : struct, IComparable<T>
+        {
+            Forbid.From.Null(x);
+            Forbid.From.Null(y);
+            if (x.CompareTo(y) < 0)
+                Thrower.ThrowWithPriority(nameof(x), message, exception);
+            return x;
         }
     }
 }
