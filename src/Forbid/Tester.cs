@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Forbid
+﻿namespace Forbid
 {
     public class Tester
     {
@@ -13,7 +11,6 @@ namespace Forbid
 
         public void Test()
         {
-            Forbid.From.NullOrEmpty(Guid.Empty, new Exception());
             
         }
     }
