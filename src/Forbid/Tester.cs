@@ -14,6 +14,7 @@ namespace Forbid
         public void Test()
         {
             Forbid.From.NullOrEmpty(Guid.Empty, new Exception());
+            
         }
     }
 }
