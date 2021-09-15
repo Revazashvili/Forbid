@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using static System.String;
 
-namespace Forbid
+namespace Forbids
 {
     /// <summary>
     /// A collection of NullOrWhitespace forbid methods as extension methods.

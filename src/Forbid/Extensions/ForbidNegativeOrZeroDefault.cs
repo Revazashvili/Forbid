@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Forbid
+namespace Forbids
 {
     /// <summary>
     /// A collection of Negative or Zero forbid methods as extension methods.

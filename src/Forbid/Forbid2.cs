@@ -1,9 +1,6 @@
 ﻿namespace Forbids
 {
-    /// <summary>
-    /// Class where extension methods will be called.
-    /// </summary>
-    public class Forbid : IForbid
+    public class Forbid2 : IForbid
     {
         /// <summary>
         /// An entry point for extension methods.

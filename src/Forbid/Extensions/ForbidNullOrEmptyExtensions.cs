@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using static System.String;
 
-namespace Forbid
+namespace Forbids
 {
     /// <summary>
     /// A collection of NullOrEmpty forbid methods as extension methods.

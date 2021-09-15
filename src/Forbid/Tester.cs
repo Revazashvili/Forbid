@@ -1,4 +1,4 @@
-﻿namespace Forbid
+﻿namespace Forbids
 {
     public class Tester
     {

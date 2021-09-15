@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Forbid
+namespace Forbids
 {
     /// <summary>
     /// A collection of methods for throwing some kind of <see cref="Exception"/>.
