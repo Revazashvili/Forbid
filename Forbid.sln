@@ -4,6 +4,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8094CBBD-C69
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forbid", "src\Forbid\Forbid.csproj", "{EC746E9B-210D-4659-A8B5-08F8F0C571CC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A4DE13FC-5E86-42E8-ADE9-BBC7125153C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forbid.UnitTests", "tests\Forbid.UnitTests\Forbid.UnitTests.csproj", "{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +18,13 @@ Global
 		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC746E9B-210D-4659-A8B5-08F8F0C571CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EC746E9B-210D-4659-A8B5-08F8F0C571CC} = {8094CBBD-C69E-4A81-B32F-88619E3627C3}
+		{3FFFD701-33A1-4FCF-82A7-A2C744FD9ADA} = {A4DE13FC-5E86-42E8-ADE9-BBC7125153C9}
 	EndGlobalSection
 EndGlobal
