@@ -19,6 +19,12 @@ namespace Forbid.UnitTests
             string empty = string.Empty;
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrEmpty(empty));
         }
+        
+        [Fact]
+        public void NotThrowExceptionWhenNotNull()
+        {
+            Forbids.Forbid.From.NullOrEmpty("input");
+        }
 
         [Fact]
         public void ReturnsPassedValue()

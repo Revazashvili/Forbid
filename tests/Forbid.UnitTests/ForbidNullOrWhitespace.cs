@@ -19,6 +19,12 @@ namespace Forbid.UnitTests
             string nullString = "  ";
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrWhitespace(nullString));
         }
+        
+        [Fact]
+        public void NotThrowExceptionWhenNotNull()
+        {
+            Forbids.Forbid.From.NullOrWhitespace("input");
+        }
 
         [Fact]
         public void ReturnsPassedValue()
