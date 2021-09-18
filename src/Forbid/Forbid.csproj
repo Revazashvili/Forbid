@@ -4,6 +4,15 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <Nullable>enable</Nullable>
         <LangVersion>10</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Forbid</Title>
+        <Authors>Revazashvili</Authors>
+        <Description>A simple package with extension methods to forbid some value matches,logical values or ranges in .Net</Description>
+        <PackageProjectUrl>https://github.com/Revazashvili/Forbid</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Revazashvili/Forbid</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Forbid c# .Net Core clauses extension methods if else</PackageTags>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
-
 </Project>
