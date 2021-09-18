@@ -149,7 +149,58 @@ namespace Forbid.UnitTests
             Forbids.Forbid.From.Range(1, 2, 3);
             Forbids.Forbid.From.Range(0, 22, 39);
         }
-        
-        
+
+        [Fact]
+        public void MoreThan_ThrowWhenMoreThanSomething()
+        {
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.MoreThan(3, 2));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.MoreThan(30, 20));
+        }
+
+        [Fact]
+        public void MoreThan_NotThrowWhenLessThanSomething()
+        {
+            Forbids.Forbid.From.MoreThan(2, 5);
+        }
+
+        [Fact]
+        public void MoreThanOrEqual_ThrowWhenMoreThanSomethingOrEqual()
+        {
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.MoreThanOrEqual(10, 2));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.MoreThanOrEqual(10, 10));
+        }
+
+        [Fact]
+        public void MoreThanOrEqual_NotThrowWhenLessThanSomething()
+        {
+            Forbids.Forbid.From.MoreThanOrEqual(10, 20);
+        }
+
+        [Fact]
+        public void LessThen_ThrowWhenLessThanSomething()
+        {
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.LessThan(1, 2));
+        }
+
+        [Fact]
+        public void LessThen_NotThrowWhenMoreThanSomething()
+        {
+            Forbids.Forbid.From.LessThan(2, 1);
+            Forbids.Forbid.From.LessThan(2, 1);
+        }
+
+        [Fact]
+        public void LessThanOrEqual_ThrowWhenLessSomethingOrEqual()
+        {
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.LessThanOrEqual(1, 2));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.LessThanOrEqual(2, 2));
+        }
+
+        [Fact]
+        public void LessThanOrEqual_NotThrowWhenMoreThanSomething()
+        {
+            Forbids.Forbid.From.LessThanOrEqual(2, 1);
+            Forbids.Forbid.From.LessThanOrEqual(2, 1);
+        }
     }
 }
