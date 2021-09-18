@@ -38,9 +38,9 @@ public class TestClass
         _someValue = Forbid.From.NegativeOrZero(someValue);
     }
 }
-
+```
 Or
-
+```c#
 public class TestClassWithCustomMessageOrException
 {
     private readonly ITestService _testService;
@@ -50,6 +50,34 @@ public class TestClassWithCustomMessageOrException
     {
         _testService = Forbid.From.Null(_testService,"test service must not be null.");
         _someValue = Forbid.From.NegativeOrZero(someValue,new CustomException());
+    }
+}
+```
+Or you can inject service in DI Container and use IForbid interface.
+for this install nuget package [Forbid.Extensions.Microsoft.DependencyInjection](https://www.nuget.org/packages/Forbid.Extensions.Microsoft.DependencyInjection/).
+```c#
+using Forbids;
+
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddForbids(); //default is Singleton, you can pass ServiceLifetime
+}
+```
+and then
+```c#
+public class TestClassWithDISupport
+{
+    private readonly IForbid _forbid;
+    
+    public TestClassWithDISupport(IForbid forbid)
+    {
+        _forbid = forbid;
+    }
+    
+    public void SomeForbid(int value)
+    {
+        _forbid.Zero(value);
+        // more logic here
     }
 }
 ```
