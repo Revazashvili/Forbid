@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <LangVersion>10</LangVersion>
+        <Title>Forbid.Extensions.Microsoft.DependencyInjection</Title>
+        <Authors>Revazashvili</Authors>
+        <Description>Dependency injection support for Forbid package.</Description>
+        <PackageProjectUrl>https://github.com/Revazashvili/Forbid</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Revazashvili/Forbid</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Forbid Microsoft Dependency Injection</PackageTags>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Forbid" Version="1.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+        <Content Include="README.md">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+    </ItemGroup>
+
+</Project>
