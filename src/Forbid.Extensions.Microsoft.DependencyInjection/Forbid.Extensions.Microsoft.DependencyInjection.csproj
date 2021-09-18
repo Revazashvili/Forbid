@@ -19,6 +19,10 @@
     <ItemGroup>
       <PackageReference Include="Forbid" Version="1.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+        <Content Include="README.md">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
     </ItemGroup>
 
 </Project>
