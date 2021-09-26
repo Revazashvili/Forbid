@@ -32,5 +32,34 @@ namespace Forbid.UnitTests
             var guid = Guid.NewGuid();
             Assert.Equal(guid,Forbids.Forbid.From.Null(guid));
         }
+
+        [Fact]
+        public void NullWithParams_ThrowExceptionWhenAtLeastOneIsNull()
+        {
+            int? firstNull = null;
+            int? secondNull = null;
+            int? thirdNull = null;
+            Assert.Throws<ArgumentNullException>(() => Forbids.Forbid.From.Null(firstNull, secondNull, thirdNull));
+        }
+
+        [Fact]
+        public void NullWithParams_ThrowExceptionWhenEmptyArray()
+        {
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Null(Array.Empty<int>()));
+        }
+        
+        [Fact]
+        public void NullWithParams_ThrowExceptionWhenNullArray()
+        {
+            int[]? nullableArray = null;
+            Assert.Throws<ArgumentNullException>(() => Forbids.Forbid.From.Null(nullableArray));
+        }
+        
+        [Fact]
+        public void NullWithParams_NotThrowExceptionWhenNothingIsNull()
+        {
+            int[] ints = {1,2,3,4,5,6,7,8,9,10};
+            Forbids.Forbid.From.Null(ints);
+        }
     }
 }

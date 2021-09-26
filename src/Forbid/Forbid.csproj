@@ -14,5 +14,6 @@
         <PackageTags>Forbid c# .Net Core clauses extension methods if else</PackageTags>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 </Project>

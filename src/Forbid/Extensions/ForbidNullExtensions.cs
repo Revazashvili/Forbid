@@ -52,5 +52,53 @@ namespace Forbids
                 Thrower.ThrowIfNotNull(exception,nameof(input));
             return input;
         }
+
+        /// <summary>
+        /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
+        /// </summary>
+        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+        /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
+        /// <typeparam name="T">Any type of object.</typeparam>
+        /// <returns><see cref="inputArray"/></returns>
+        public static T[] Null<T>(this IForbid forbid, params T[] inputArray)
+        {
+            Forbid.From.NullOrEmpty(inputArray);
+            foreach (var input in inputArray)
+                Null(forbid, input);
+            return inputArray;
+        }
+        
+        /// <summary>
+        /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
+        /// </summary>
+        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+        /// <param name="message">Optional custom message which will be used to throw exception.</param>
+        /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
+        /// <typeparam name="T">Any type of object.</typeparam>
+        /// <returns><see cref="inputArray"/></returns>
+        public static T[] Null<T>(this IForbid forbid, string message,params T[] inputArray)
+        {
+            Forbid.From.NullOrEmpty(inputArray);
+            foreach (var input in inputArray)
+                Null(forbid, input, message);
+            return inputArray;
+        }
+        
+        
+        /// <summary>
+        /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
+        /// </summary>
+        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+        /// <param name="exception">An <see cref="Exception"/> which will be thrown if any input is null.</param>
+        /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
+        /// <typeparam name="T">Any type of object.</typeparam>
+        /// <returns><see cref="inputArray"/></returns>
+        public static T[] Null<T>(this IForbid forbid,Exception exception, params T[] inputArray)
+        {
+            Forbid.From.NullOrEmpty(inputArray);
+            foreach (var input in inputArray)
+                Null(forbid, input, exception);
+            return inputArray;
+        }
     }
 }
