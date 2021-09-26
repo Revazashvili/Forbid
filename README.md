@@ -1,6 +1,12 @@
 # Forbid
 A simple package with extension methods to forbid some value matches,logical values or ranges in .Net
 
+[![.NET](https://img.shields.io/badge/--512BD4?logo=.net&logoColor=ffffff)](https://dotnet.microsoft.com/)
+[![NuGet stable version](https://badgen.net/nuget/v/Forbid)](https://www.nuget.org/packages/Forbid)
+[![GitHub license](https://badgen.net/github/license/Revazashvili/Forbid)](https://github.com/Revazashvili/Forbid/blob/main/LICENSE)
+
+
+
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
 
