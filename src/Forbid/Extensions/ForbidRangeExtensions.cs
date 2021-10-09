@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of Range forbid methods as extension methods.

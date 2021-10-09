@@ -1,8 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-[assembly:InternalsVisibleTo("Forbid.UnitTests")]
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of methods for throwing some kind of <see cref="Exception"/>.

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of LessThanOrEqual forbid methods as extension methods.

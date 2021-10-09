@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of Equal forbid methods as extension methods.

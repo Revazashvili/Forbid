@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of Any forbid methods as extension methods.

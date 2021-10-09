@@ -1,5 +1,6 @@
 ﻿namespace Forbids
 {
+
     /// <summary>
     /// Class where extension methods will be called.
     /// </summary>

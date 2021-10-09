@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using static System.String;
-
-namespace Forbids
+﻿namespace Forbids
 {
     /// <summary>
     /// A collection of NullOrWhitespace forbid methods as extension methods.
