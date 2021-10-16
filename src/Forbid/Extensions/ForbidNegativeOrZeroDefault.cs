@@ -13,11 +13,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T NegativeOrZero<T>(this IForbid forbid,T input)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.NegativeOrZero(input);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.NegativeOrZero(input);
+
         /// <summary>
         /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative or zero.
         /// </summary>
@@ -27,11 +25,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T NegativeOrZero<T>(this IForbid forbid,T input, string message)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.NegativeOrZero(input,message);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.NegativeOrZero(input,message);
+
         /// <summary>
         /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative or zero.
         /// </summary>
@@ -41,9 +37,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T NegativeOrZero<T>(this IForbid forbid,T input,Exception exception)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.NegativeOrZero(input, null, exception);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.NegativeOrZero(input, null, exception);
     }
 }

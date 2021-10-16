@@ -14,10 +14,8 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThan<T>(this IForbid forbid, T input, T valueToCompare) 
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThan(input, valueToCompare);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThan(input, valueToCompare);
 
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is more than second parameter.
@@ -29,10 +27,8 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThan<T>(this IForbid forbid, T input, T valueToCompare, string message)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThan(input, valueToCompare, message);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThan(input, valueToCompare, message);
 
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is more than second parameter.
@@ -44,9 +40,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThan<T>(this IForbid forbid, T input, T valueToCompare, Exception exception)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThan(input, valueToCompare, null, exception);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThan(input, valueToCompare, null, exception);
     } 
 }

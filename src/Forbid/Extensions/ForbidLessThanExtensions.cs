@@ -13,11 +13,9 @@
         /// <param name="valueToCompare">The parameter to compare.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
-        public static T LessThan<T>(this IForbid forbid, T input, T valueToCompare) 
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.LessThan(input, valueToCompare);
-        }
+        public static T LessThan<T>(this IForbid forbid, T input, T valueToCompare)
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.LessThan(input, valueToCompare);
 
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is less than second parameter.
@@ -29,10 +27,8 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T LessThan<T>(this IForbid forbid, T input, T valueToCompare, string message)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.LessThan(input, valueToCompare, message);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.LessThan(input, valueToCompare, message);
 
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is less than second parameter.
@@ -44,9 +40,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T LessThan<T>(this IForbid forbid, T input, T valueToCompare, Exception exception)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.LessThan(input, valueToCompare, null, exception);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.LessThan(input, valueToCompare, null, exception);
     }
 }

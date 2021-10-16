@@ -13,11 +13,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T Negative<T>(this IForbid forbid,T input)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.Negative(input);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.Negative(input);
+
         /// <summary>
         /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative.
         /// </summary>
@@ -27,11 +25,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T Negative<T>(this IForbid forbid,T input, string message)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.Negative(input,message);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.Negative(input,message);
+
         /// <summary>
         /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative.
         /// </summary>
@@ -41,9 +37,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T Negative<T>(this IForbid forbid,T input,Exception exception)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.Negative(input, null, exception);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.Negative(input, null, exception);
     }
 }

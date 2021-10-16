@@ -30,7 +30,7 @@
         /// <exception cref="ArgumentException"><see cref="ArgumentException"/> thrown if provided exception is null.</exception>
         internal static void ThrowIfNotNull(string message,string nameOf)
         {
-            if (!string.IsNullOrEmpty(message))
+            if (!IsNullOrEmpty(message))
                 throw new ArgumentException(message);
             throw new ArgumentException(nameOf);
         }
@@ -46,11 +46,11 @@
         /// <exception cref="ArgumentException"><see cref="ArgumentException"/> thrown if provided exception and message is null.</exception>
         internal static void ThrowWithPriority(string nameOf, string? message = null, Exception? exception = null)
         {
-            if (string.IsNullOrEmpty(message) && exception is null)
+            if (IsNullOrEmpty(message) && exception is null)
                 throw new ArgumentException(nameOf);
             if (exception is not null)
                 throw exception;
-            if (!string.IsNullOrEmpty(message))
+            if (!IsNullOrEmpty(message))
                 throw new ArgumentException(nameOf);
         }
     }

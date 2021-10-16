@@ -14,11 +14,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThanOrEqual<T>(this IForbid forbid, T input, T valueToCompare)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare);
+
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is more than or equal second parameter.
         /// </summary>
@@ -29,11 +27,9 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThanOrEqual<T>(this IForbid forbid, T input, T valueToCompare,string message)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare,message);
-        }
-        
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare,message);
+
         /// <summary>
         ///  Throws <see cref="ArgumentException"/> if <paramref name="input"/> is than or equal than second parameter.
         /// </summary>
@@ -44,9 +40,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         public static T MoreThanOrEqual<T>(this IForbid forbid, T input, T valueToCompare,Exception exception)
-            where T : struct, IComparable<T>
-        {
-            return ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare,null,exception);
-        }
+            where T : struct, IComparable<T> =>
+            ForbidDefaultExtensions.MoreThanOrEqual(input,valueToCompare,null,exception);
     }
 }
