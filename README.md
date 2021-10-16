@@ -19,6 +19,7 @@ If you like or are using this project please give it a star. Thanks!
 * False (throws if boolean input is false.)
 * Range (throws if input is in provided range.)
 * Equal (throws if input is equal to provided value.)
+* NotEqual (throws if input is not equal to provided value.)
 * Positive (throws if input is positive number.)
 * PositiveOrZero (throws if input is positive number or zero.)
 * Negative (throws if input is negative number.)
@@ -27,6 +28,7 @@ If you like or are using this project please give it a star. Thanks!
 * MoreThanOrEqual (throws if input is more than or equal to provided value.)
 * LessThan (throws if input is less than provided value.)
 * LessThanOrEqual (throws if input is less than or equal to provided value.)
+* Any(throws if any element in input satisfies a condition.)
 
 You can pass message or custom exception to methods. 
 
