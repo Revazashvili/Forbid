@@ -40,6 +40,8 @@ namespace Forbid.UnitTests
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(zeroDouble));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(zeroLong));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(0));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(zeroDouble,zeroLong,0));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(new Exception("none of the element in  the array should be zero"),zeroDouble,zeroLong,0));
         }
         
         [Fact]
@@ -48,7 +50,7 @@ namespace Forbid.UnitTests
             Forbids.Forbid.From.Zero(10);
             Forbids.Forbid.From.Zero(1.2);
             Forbids.Forbid.From.Zero(11231231);
-            Forbids.Forbid.From.Zero(TimeSpan.MaxValue);
+            Forbids.Forbid.From.Zero(1,2,3,4,5);
         }
 
         [Fact]
