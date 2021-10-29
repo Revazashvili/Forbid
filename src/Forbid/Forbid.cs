@@ -1,14 +1,12 @@
-﻿namespace Forbids
-{
+﻿namespace Forbids;
 
+/// <summary>
+/// Class where extension methods will be called.
+/// </summary>
+public class Forbid : IForbid
+{
     /// <summary>
-    /// Class where extension methods will be called.
+    /// An entry point for extension methods.
     /// </summary>
-    public class Forbid : IForbid
-    {
-        /// <summary>
-        /// An entry point for extension methods.
-        /// </summary>
-        public static IForbid From { get; } = new Forbid();
-    }
+    public static IForbid From { get; } = new Forbid();
 }

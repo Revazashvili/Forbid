@@ -60,9 +60,8 @@
         /// <returns><see cref="inputArray"/></returns>
         public static T[] Null<T>(this IForbid forbid, params T[] inputArray)
         {
-            Forbid.From.NullOrEmpty(inputArray);
-            foreach (var input in inputArray)
-                Null(forbid, input);
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Null(input);
             return inputArray;
         }
         
@@ -76,9 +75,8 @@
         /// <returns><see cref="inputArray"/></returns>
         public static T[] Null<T>(this IForbid forbid, string message,params T[] inputArray)
         {
-            Forbid.From.NullOrEmpty(inputArray);
-            foreach (var input in inputArray)
-                Null(forbid, input, message);
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Null(input, message);
             return inputArray;
         }
         
@@ -93,9 +91,8 @@
         /// <returns><see cref="inputArray"/></returns>
         public static T[] Null<T>(this IForbid forbid,Exception exception, params T[] inputArray)
         {
-            Forbid.From.NullOrEmpty(inputArray);
-            foreach (var input in inputArray)
-                Null(forbid, input, exception);
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Null(input, exception);
             return inputArray;
         }
     }

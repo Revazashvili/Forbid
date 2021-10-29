@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <Nullable>enable</Nullable>
-        <LangVersion>10</LangVersion>
+        <LangVersion>preview</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Forbid</Title>
         <Authors>Revazashvili</Authors>
@@ -15,5 +15,10 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageVersion>1.0.2</PackageVersion>
         <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\Forbid.xml</DocumentationFile>
+      <NoWarn>1701;1702;1591;1574</NoWarn>
     </PropertyGroup>
 </Project>

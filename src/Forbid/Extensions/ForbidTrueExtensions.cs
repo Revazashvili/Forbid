@@ -1,36 +1,35 @@
-﻿namespace Forbids
+﻿namespace Forbids;
+
+/// <summary>
+/// A collection of True forbid methods as extension methods.
+/// </summary>
+public static class ForbidTrueExtensions
 {
     /// <summary>
-    /// A collection of True forbid methods as extension methods.
+    /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
     /// </summary>
-    public static class ForbidTrueExtensions
-    {
-        /// <summary>
-        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
-        /// </summary>
-        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
-        /// <param name="input">The input which will be checked.</param>
-        /// <returns><see cref="bool"/> input.</returns>
-        public static bool True(this IForbid forbid, bool input) => ForbidDefaultExtensions.True(input);
+    /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+    /// <param name="input">The input which will be checked.</param>
+    /// <returns><see cref="bool"/> input.</returns>
+    public static bool True(this IForbid forbid, bool input) => ForbidDefaultExtensions.True(input);
 
-        /// <summary>
-        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
-        /// </summary>
-        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
-        /// <param name="input">The input which will be checked.</param>
-        /// <param name="message">Optional custom message which will be used to throw exception.</param>
-        /// <returns><see cref="bool"/> input.</returns>
-        public static bool True(this IForbid forbid, bool input, string message) =>
-            ForbidDefaultExtensions.True(input, message);
+    /// <summary>
+    /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
+    /// </summary>
+    /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+    /// <param name="input">The input which will be checked.</param>
+    /// <param name="message">Optional custom message which will be used to throw exception.</param>
+    /// <returns><see cref="bool"/> input.</returns>
+    public static bool True(this IForbid forbid, bool input, string message) =>
+        ForbidDefaultExtensions.True(input, message);
 
-        /// <summary>
-        /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
-        /// </summary>
-        /// <param name="forbid"><see cref="IForbid"/> interface.</param>
-        /// <param name="input">The input which will be checked.</param>
-        /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
-        /// <returns><see cref="bool"/> input.</returns>
-        public static bool True(this IForbid forbid, bool input, Exception exception) =>
-            ForbidDefaultExtensions.True(input, null, exception);
-    }
+    /// <summary>
+    /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is true.
+    /// </summary>
+    /// <param name="forbid"><see cref="IForbid"/> interface.</param>
+    /// <param name="input">The input which will be checked.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <returns><see cref="bool"/> input.</returns>
+    public static bool True(this IForbid forbid, bool input, Exception exception) =>
+        ForbidDefaultExtensions.True(input, null, exception);
 }

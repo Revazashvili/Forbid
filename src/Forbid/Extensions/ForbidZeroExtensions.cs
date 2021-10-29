@@ -39,5 +39,29 @@
         public static T Zero<T>(this IForbid forbid, T input, Exception exception)
             where T : struct, IComparable<T> =>
             ForbidDefaultExtensions.Zero(input, null, exception);
+
+        public static T[] Zero<T>(this IForbid forbid, params T[] inputArray) 
+            where T : struct, IComparable<T>
+        {
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Zero(input);
+            return inputArray;
+        }
+        
+        public static T[] Zero<T>(this IForbid forbid, string message,params T[] inputArray) 
+            where T : struct, IComparable<T>
+        {
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Zero(input, message);
+            return inputArray;
+        }
+        
+        public static T[] Zero<T>(this IForbid forbid, Exception exception,params T[] inputArray) 
+            where T : struct, IComparable<T>
+        {
+            foreach (var input in forbid.NullOrEmpty(inputArray))
+                forbid.Zero(input, exception);
+            return inputArray;
+        }
     }
 }
