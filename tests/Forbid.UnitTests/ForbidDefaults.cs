@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Forbids;
 using Xunit;
 
@@ -41,7 +42,7 @@ namespace Forbid.UnitTests
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(zeroLong));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(0));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(zeroDouble,zeroLong,0));
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Zero(new Exception("none of the element in  the array should be zero"),zeroDouble,zeroLong,0));
+            Assert.Throws<Exception>(() => Forbids.Forbid.From.Zero(new Exception("none of the element in  the array should be zero"),zeroDouble,zeroLong,0));
         }
         
         [Fact]
@@ -118,6 +119,7 @@ namespace Forbid.UnitTests
             
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.True(true));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.True(equal));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.True(equal,true));
         }
 
         [Fact]
@@ -127,6 +129,9 @@ namespace Forbid.UnitTests
             
             Forbids.Forbid.From.True(false);
             Forbids.Forbid.From.True(equal);
+            Forbids.Forbid.From.True(false, equal);
+            var result = Forbids.Forbid.From.True(false, equal);
+            Assert.Equal(2, result.Count());
         }
 
         [Fact]
@@ -136,6 +141,7 @@ namespace Forbid.UnitTests
             
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.False(false));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.False(equal));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.False(equal,false));
         }
 
         [Fact]
@@ -144,6 +150,9 @@ namespace Forbid.UnitTests
             var equal = 22 == 22; 
             Forbids.Forbid.From.False(equal);
             Forbids.Forbid.From.False(true);
+            Forbids.Forbid.From.False(true,equal);
+            var result = Forbids.Forbid.From.False(true,equal);
+            Assert.Equal(2, result.Count());
         }
 
         [Fact]

@@ -15,6 +15,7 @@ internal static class ForeachExtensions
         Forbid.From.NullOrEmpty(source);
         Forbid.From.Null(predicate);
         foreach (var item in source)
-            yield return predicate(item);
+            predicate(item);
+        return source;
     }
 }

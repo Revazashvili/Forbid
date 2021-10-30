@@ -32,7 +32,7 @@ public static class ForbidFalseExtensions
     /// <returns><see cref="bool"/> input.</returns>
     public static bool False(this IForbid forbid, bool input, Exception exception) =>
         ForbidDefaultExtensions.False(input, null, exception);
-    
+
     /// <summary>
     ///  Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is false.
     /// </summary>
