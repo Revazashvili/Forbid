@@ -34,7 +34,7 @@ public static class ForbidAnyExtensions
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">An <see cref="IEnumerable{T}"/> whose elements to apply the predicate to.</param>
     /// <param name="predicate">A function to test each element for a condition.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input satisfies a condition.</param>
     /// <typeparam name="T">The type of the elements of source.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static IEnumerable<T> Any<T>(this IForbid forbid, IEnumerable<T> input, Func<T, bool> predicate,

@@ -33,7 +33,7 @@ public static class ForbidNegativeOrZeroDefault
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The input which will be checked.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T NegativeOrZero<T>(this IForbid forbid, T input, Exception exception)

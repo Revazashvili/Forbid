@@ -28,7 +28,7 @@ public static class ForbidFalseExtensions
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The input which will be checked.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is false.</param>
     /// <returns><see cref="bool"/> input.</returns>
     public static bool False(this IForbid forbid, bool input, Exception exception) =>
         ForbidDefaultExtensions.False(input, null, exception);

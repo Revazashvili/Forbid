@@ -44,7 +44,7 @@ public static class ForbidNullOrWhitespaceExtension
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The <see cref="IEnumerable{T}"/> which will be checked.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown.</param>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
     public static string NullOrWhitespace(this IForbid forbid, string input, Exception exception)

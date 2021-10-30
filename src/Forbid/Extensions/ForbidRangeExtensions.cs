@@ -39,7 +39,7 @@ public static class ForbidRangeExtensions
     /// <param name="input">The <see cref="input"/> which will be checked.</param>
     /// <param name="from">The start point of range.</param>
     /// <param name="to">The end point of range.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T Range<T>(this IForbid forbid, T input, T from, T to, Exception exception)
