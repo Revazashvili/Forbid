@@ -75,7 +75,7 @@ public static class ForbidZeroExtensions
     /// Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is zero.
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if any input is null.</param>
+    /// <param name="exception">An <see cref="Exception"/> which will be thrown if any input is zero.</param>
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
