@@ -47,13 +47,9 @@ public static class ForbidZeroExtensions
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
-    public static T[] Zero<T>(this IForbid forbid, params T[] inputArray)
-        where T : struct, IComparable<T>
-    {
-        foreach (var input in forbid.NullOrEmpty(inputArray))
-            forbid.Zero(input);
-        return inputArray;
-    }
+    public static IEnumerable<T> Zero<T>(this IForbid forbid, params T[] inputArray)
+        where T : struct, IComparable<T> => forbid.NullOrEmpty(inputArray).ForEach(forbid.Zero);
+
 
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is zero.
@@ -63,13 +59,9 @@ public static class ForbidZeroExtensions
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
-    public static T[] Zero<T>(this IForbid forbid, string message, params T[] inputArray)
-        where T : struct, IComparable<T>
-    {
-        foreach (var input in forbid.NullOrEmpty(inputArray))
-            forbid.Zero(input, message);
-        return inputArray;
-    }
+    public static IEnumerable<T> Zero<T>(this IForbid forbid, string message, params T[] inputArray)
+        where T : struct, IComparable<T> => forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Zero(x, message));
+
 
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is zero.
@@ -79,11 +71,6 @@ public static class ForbidZeroExtensions
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
-    public static T[] Zero<T>(this IForbid forbid, Exception exception, params T[] inputArray)
-        where T : struct, IComparable<T>
-    {
-        foreach (var input in forbid.NullOrEmpty(inputArray))
-            forbid.Zero(input, exception);
-        return inputArray;
-    }
+    public static IEnumerable<T> Zero<T>(this IForbid forbid, Exception exception, params T[] inputArray)
+        where T : struct, IComparable<T> => forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Zero(x, exception));
 }

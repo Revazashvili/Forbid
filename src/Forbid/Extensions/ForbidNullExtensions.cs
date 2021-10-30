@@ -58,13 +58,9 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static T[] Null<T>(this IForbid forbid, params T[] inputArray)
-        {
-            foreach (var input in forbid.NullOrEmpty(inputArray))
-                forbid.Null(input);
-            return inputArray;
-        }
-        
+        public static IEnumerable<T> Null<T>(this IForbid forbid, params T[] inputArray) =>
+            forbid.NullOrEmpty(inputArray).ForEach(forbid.Null);
+
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
         /// </summary>
@@ -73,14 +69,10 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static T[] Null<T>(this IForbid forbid, string message,params T[] inputArray)
-        {
-            foreach (var input in forbid.NullOrEmpty(inputArray))
-                forbid.Null(input, message);
-            return inputArray;
-        }
-        
-        
+        public static IEnumerable<T> Null<T>(this IForbid forbid, string message, params T[] inputArray) =>
+            forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Null(x, message));
+
+
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
         /// </summary>
@@ -89,11 +81,7 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static T[] Null<T>(this IForbid forbid,Exception exception, params T[] inputArray)
-        {
-            foreach (var input in forbid.NullOrEmpty(inputArray))
-                forbid.Null(input, exception);
-            return inputArray;
-        }
+        public static IEnumerable<T> Null<T>(this IForbid forbid, Exception exception, params T[] inputArray) =>
+            forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Null(x, exception));
     }
 }
