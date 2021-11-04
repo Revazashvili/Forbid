@@ -13,6 +13,9 @@ namespace Forbid.UnitTests
             string? nullString2 = null;
             Assert.Throws<ArgumentNullException>(() => Forbids.Forbid.From.NullOrEmpty(nullString));
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrEmpty(nullString,nullString2));
+
+            Guid? nullGuid = null;
+            Assert.Throws<ArgumentNullException>(() => Forbids.Forbid.From.NullOrEmpty(nullGuid));
         }
 
         [Fact]
