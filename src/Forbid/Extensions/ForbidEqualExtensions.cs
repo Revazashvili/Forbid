@@ -23,7 +23,7 @@ public static class ForbidEqualExtensions
     /// <param name="x">The first parameter to compare.</param>
     /// <param name="y">The second parameter to compare.</param>
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T Equal<T>(this IForbid forbid, T x, T y, string message) where T : struct, IComparable<T> =>
         ForbidDefaultExtensions.Equal(x, y, message);

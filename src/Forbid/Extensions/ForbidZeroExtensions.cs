@@ -1,4 +1,6 @@
-﻿namespace Forbids;
+﻿using System.Collections.Generic;
+
+namespace Forbids;
 
 /// <summary>
 /// A collection of Zero forbid methods as extension methods.
@@ -10,7 +12,7 @@ public static class ForbidZeroExtensions
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The input which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T Zero<T>(this IForbid forbid, T input)
         where T : struct, IComparable<T> =>
@@ -22,7 +24,7 @@ public static class ForbidZeroExtensions
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The input which will be checked.</param>
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T Zero<T>(this IForbid forbid, T input, string message)
         where T : struct, IComparable<T> =>
@@ -34,7 +36,7 @@ public static class ForbidZeroExtensions
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="input">The input which will be checked.</param>
     /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
     public static T Zero<T>(this IForbid forbid, T input, Exception exception)
         where T : struct, IComparable<T> =>
@@ -44,9 +46,9 @@ public static class ForbidZeroExtensions
     ///  Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is zero.
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
-    /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
-    /// <returns><see cref="inputArray"/></returns>
+    /// <param name="inputArray">The <see cref="IEnumerable{T}"/> which will be checked.</param>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
+    /// <returns><see cref="IEnumerable{T}"/></returns>
     public static IEnumerable<T> Zero<T>(this IForbid forbid, params T[] inputArray)
         where T : struct, IComparable<T> => inputArray.ForEach(forbid.Zero);
 
@@ -56,9 +58,9 @@ public static class ForbidZeroExtensions
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
-    /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
-    /// <returns><see cref="inputArray"/></returns>
+    /// <param name="inputArray">The <see cref="IEnumerable{T}"/> which will be checked.</param>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
+    /// <returns><see cref="IEnumerable{T}"/></returns>
     public static IEnumerable<T> Zero<T>(this IForbid forbid, string message, params T[] inputArray)
         where T : struct, IComparable<T> => inputArray.ForEach(input => forbid.Zero(input, message));
 
@@ -68,9 +70,9 @@ public static class ForbidZeroExtensions
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="exception">An <see cref="Exception"/> which will be thrown if any input is zero.</param>
-    /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
-    /// <returns><see cref="inputArray"/></returns>
+    /// <param name="inputArray">The <see cref="IEnumerable{T}"/> which will be checked.</param>
+    /// <typeparam name="T">The type of the elements of source.</typeparam>
+    /// <returns><see cref="IEnumerable{T}"/></returns>
     public static IEnumerable<T> Zero<T>(this IForbid forbid, Exception exception, params T[] inputArray)
         where T : struct, IComparable<T> => inputArray.ForEach(input => forbid.Zero(input, exception));
 }
