@@ -59,7 +59,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
         public static IEnumerable<T> Null<T>(this IForbid forbid, params T[] inputArray) =>
-            forbid.NullOrEmpty(inputArray).ForEach(forbid.Null);
+            inputArray.ForEach(forbid.Null);
 
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
@@ -70,7 +70,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
         public static IEnumerable<T> Null<T>(this IForbid forbid, string message, params T[] inputArray) =>
-            forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Null(x, message));
+            inputArray.ForEach(x => forbid.Null(x, message));
 
 
         /// <summary>
@@ -82,6 +82,6 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
         public static IEnumerable<T> Null<T>(this IForbid forbid, Exception exception, params T[] inputArray) =>
-            forbid.NullOrEmpty(inputArray).ForEach(x => forbid.Null(x, exception));
+            inputArray.ForEach(x => forbid.Null(x, exception));
     }
 }

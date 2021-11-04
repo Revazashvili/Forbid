@@ -43,7 +43,7 @@ public static class ForbidTrueExtensions
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, params bool[] inputArray) =>
-        forbid.NullOrEmpty(inputArray).ForEach(forbid.True);
+        inputArray.ForEach(forbid.True);
 
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is true.
@@ -54,7 +54,7 @@ public static class ForbidTrueExtensions
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, string message, params bool[] inputArray) =>
-        forbid.NullOrEmpty(inputArray).ForEach(x => forbid.True(x, message));
+        inputArray.ForEach(x => forbid.True(x, message));
 
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if one of input in <paramref name="inputArray"/> is true.
@@ -65,6 +65,6 @@ public static class ForbidTrueExtensions
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, Exception exception, params bool[] inputArray) =>
-        forbid.NullOrEmpty(inputArray).ForEach(x => forbid.True(x, exception));
+        inputArray.ForEach(x => forbid.True(x, exception));
 
 }
