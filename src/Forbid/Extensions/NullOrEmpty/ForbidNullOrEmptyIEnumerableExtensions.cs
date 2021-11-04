@@ -64,5 +64,4 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     }
     
     #endregion
-    
 }

@@ -10,20 +10,25 @@ namespace Forbid.UnitTests
         public void ThrowWhenNullNotEmpty()
         {
             string? nullString = null;
+            string? nullString2 = null;
             Assert.Throws<ArgumentNullException>(() => Forbids.Forbid.From.NullOrEmpty(nullString));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrEmpty(nullString,nullString2));
         }
-        
+
         [Fact]
         public void ThrowWhenEmptyNotNull()
         {
             string empty = string.Empty;
+            string empty2 = string.Empty;
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrEmpty(empty));
+            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NullOrEmpty(empty, empty2));
         }
         
         [Fact]
         public void NotThrowExceptionWhenNotNull()
         {
             Forbids.Forbid.From.NullOrEmpty("input");
+            Forbids.Forbid.From.NullOrEmpty("input","input2","input3");
         }
 
         [Fact]
