@@ -82,7 +82,7 @@ public static class ForbidNullOrEmptyStringExtensions
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
     /// <returns>List of passed values</returns>
     public static IEnumerable<string> NullOrEmpty(this IForbid forbid, string message, params string[] inputArray) =>
-        inputArray.ForEach(x => forbid.NullOrEmpty(x, message));
+        inputArray.ForEach(input => forbid.NullOrEmpty(input, message));
 
     /// <summary>
     /// Throws <see cref="ArgumentNullException"/> if one of <paramref name="inputArray"/> is null.
@@ -94,7 +94,7 @@ public static class ForbidNullOrEmptyStringExtensions
     /// <returns>List of passed values</returns>
     public static IEnumerable<string> NullOrEmpty(this IForbid forbid, Exception exception, 
             params string[] inputArray) =>
-        inputArray.ForEach(x => forbid.NullOrEmpty(x, exception));
+        inputArray.ForEach(input => forbid.NullOrEmpty(input, exception));
 
     #endregion
 }

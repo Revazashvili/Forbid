@@ -70,7 +70,7 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
         public static IEnumerable<T> Null<T>(this IForbid forbid, string message, params T[] inputArray) =>
-            inputArray.ForEach(x => forbid.Null(x, message));
+            inputArray.ForEach(input => forbid.Null(input, message));
 
 
         /// <summary>
@@ -82,6 +82,6 @@
         /// <typeparam name="T">Any type of object.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
         public static IEnumerable<T> Null<T>(this IForbid forbid, Exception exception, params T[] inputArray) =>
-            inputArray.ForEach(x => forbid.Null(x, exception));
+            inputArray.ForEach(input => forbid.Null(input, exception));
     }
 }

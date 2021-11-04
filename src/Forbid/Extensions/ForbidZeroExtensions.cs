@@ -60,7 +60,7 @@ public static class ForbidZeroExtensions
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<T> Zero<T>(this IForbid forbid, string message, params T[] inputArray)
-        where T : struct, IComparable<T> => inputArray.ForEach(x => forbid.Zero(x, message));
+        where T : struct, IComparable<T> => inputArray.ForEach(input => forbid.Zero(input, message));
 
 
     /// <summary>
@@ -72,5 +72,5 @@ public static class ForbidZeroExtensions
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<T> Zero<T>(this IForbid forbid, Exception exception, params T[] inputArray)
-        where T : struct, IComparable<T> => inputArray.ForEach(x => forbid.Zero(x, exception));
+        where T : struct, IComparable<T> => inputArray.ForEach(input => forbid.Zero(input, exception));
 }

@@ -84,7 +84,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty guid.</exception>
     /// <returns><see cref="IEnumerable{T}"/>.</returns>
     public static IEnumerable<Guid> NullOrEmpty(this IForbid forbid, string message, params Guid[] inputArray) =>
-        inputArray.ForEach(x => forbid.NullOrEmpty(x, message));
+        inputArray.ForEach(input => forbid.NullOrEmpty(input, message));
 
     /// <summary>
     /// Checks if one of <see cref="IEnumerable{T}"/> is empty guid of null and throws exception.
@@ -96,7 +96,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty guid.</exception>
     /// <returns><see cref="IEnumerable{T}"/>.</returns>
     public static IEnumerable<Guid> NullOrEmpty(this IForbid forbid, Exception exception, params Guid[] inputArray) =>
-        inputArray.ForEach(x => forbid.NullOrEmpty(x, exception));
+        inputArray.ForEach(input => forbid.NullOrEmpty(input, exception));
 
 
     #endregion
