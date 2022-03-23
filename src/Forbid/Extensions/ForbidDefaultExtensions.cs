@@ -231,21 +231,6 @@ internal static class ForbidDefaultExtensions
     /// <summary>
     /// Check input and throws <see cref="Exception"/> if it's false.
     /// </summary>
-    /// <param name="input"><see cref="Boolean"/> value to check.</param>
-    /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
-    /// <returns><see cref="bool"/> value.</returns>
-    internal static bool False(bool input, string? message = null, Exception? exception = null)
-    {
-        Forbid.From.Null(input);
-        if (!input)
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
-        return input;
-    }
-
-    /// <summary>
-    /// Check input and throws <see cref="Exception"/> if it's false.
-    /// </summary>
     /// <param name="input">An <see cref="IEnumerable{T}"/> whose elements to apply the predicate to.</param>
     /// <param name="predicate">A function to test each element for a condition.</param>
     /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
