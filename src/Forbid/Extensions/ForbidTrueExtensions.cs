@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Forbids;
+﻿namespace Forbids;
 
 /// <summary>
 /// A collection of True forbid methods as extension methods.
