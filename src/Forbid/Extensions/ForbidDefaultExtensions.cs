@@ -204,27 +204,4 @@ internal static class ForbidDefaultExtensions
             Thrower.ThrowWithPriority(nameof(x), message, exception);
         return x;
     }
-
-    /// <summary>
-    /// Uses <see cref="IComparable{T}"/> to check input if value is in range of <paramref name="from"/> and <paramref name="to"/> and throws <see cref="Exception"/>.
-    /// </summary>
-    /// <param name="x">The <see cref="x"/> which will be checked.</param>
-    /// <param name="from">The start point of range.</param>
-    /// <param name="to">The end point of range.</param>
-    /// <param name="message">Optional custom message which will be used to throw exception if <paramref name="exception"/> is null.</param>
-    /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
-    /// <returns><see cref="T"/> input.</returns>
-    internal static T Range<T>(T x, T from, T to, string? message = null, Exception? exception = null)
-        where T : struct, IComparable<T>
-    {
-        Forbid.From.Null(x);
-        Forbid.From.Null(from);
-        Forbid.From.Null(to);
-        Equal(from, to, message, exception);
-        // if (from < x < to), then throw exception
-        if (x.CompareTo(from) > 0 && x.CompareTo(to) < 0)
-            Thrower.ThrowWithPriority(nameof(x), message, exception);
-        return x;
-    }
 }
