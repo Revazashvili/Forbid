@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Forbid.UnitTests
 {
-    public class ForbidZero
+    public class ForbidEqual
     {
         [Fact]
         public void Equal_ThrowsExceptionWhenEqual()
