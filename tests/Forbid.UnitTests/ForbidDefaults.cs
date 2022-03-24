@@ -9,20 +9,6 @@ namespace Forbid.UnitTests
     public class ForbidDefaults
     {
         [Fact]
-        public void LessThanOrEqual_ThrowWhenLessSomethingOrEqual()
-        {
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.LessThanOrEqual(1, 2));
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.LessThanOrEqual(2, 2));
-        }
-
-        [Fact]
-        public void LessThanOrEqual_NotThrowWhenMoreThanSomething()
-        {
-            Forbids.Forbid.From.LessThanOrEqual(2, 1);
-            Forbids.Forbid.From.LessThanOrEqual(2, 1);
-        }
-
-        [Fact]
         public void Any_ThrowWhenAnyElementSatisfiesCondition()
         {
             IEnumerable<int> integerList = new List<int> { 1, 2, 3 };
