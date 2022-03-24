@@ -49,7 +49,7 @@ public static class ForbidMoreThanOrEqualExtensions
     /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
     /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="T"/> input.</returns>
-    internal static T MoreThanOrEqual<T>(T x, T y, string? message = null, Exception? exception = null)
+    private static T MoreThanOrEqual<T>(T x, T y, string? message = null, Exception? exception = null)
         where T : struct, IComparable<T>
     {
         Forbid.From.Null(x);
