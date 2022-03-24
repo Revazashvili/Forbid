@@ -3,7 +3,7 @@
 /// <summary>
 /// A collection of Negative or Zero forbid methods as extension methods.
 /// </summary>
-public static class ForbidNegativeOrZeroDefault
+public static class ForbidNegativeOrZeroExtensions
 {
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> is negative or zero.
