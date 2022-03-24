@@ -49,7 +49,7 @@ public static class ForbidPositiveOrZeroExtensions
         where T : struct, IComparable<T>
     {
         Forbid.From.Null(input);
-        ForbidDefaultExtensions.Positive(input, message, exception);
+        ForbidPositiveExtensions.Positive(input, message, exception);
         ForbidZeroExtensions.Zero(input, message, exception);
         return input;
     }
