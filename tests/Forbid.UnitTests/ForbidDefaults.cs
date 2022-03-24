@@ -9,21 +9,6 @@ namespace Forbid.UnitTests
     public class ForbidDefaults
     {
         [Fact]
-        public void Positive_ThrowsWhenPositive()
-        {
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Positive(10));
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Positive(1.2));
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Positive(TimeSpan.MaxValue));
-        }
-        
-        [Fact]
-        public void Positive_NotThrowsWhenNegative()
-        {
-            Forbids.Forbid.From.Positive(-10);
-            Forbids.Forbid.From.Positive(-1.2);
-        }
-
-        [Fact]
         public void Negative_ThrowWhenNegative()
         {
             Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.Negative(-1));
