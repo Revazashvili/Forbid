@@ -9,13 +9,6 @@ namespace Forbid.UnitTests
     public class ForbidDefaults
     {
         [Fact]
-        public void NotEqual_ThrowsExceptionWhenEqual() =>
-            Assert.Throws<ArgumentException>(() => Forbids.Forbid.From.NotEqual(100, 10));
-
-        [Fact]
-        public void NotEqual_NotThrowsExceptionWhenEqual() => Forbids.Forbid.From.NotEqual(10, 10);
-
-        [Fact]
         public void Zero_ThrowsWhenZero()
         {
             double zeroDouble = 0.0;
