@@ -48,7 +48,7 @@ public static class ForbidNegativeOrZeroExtensions
     private static T NegativeOrZero<T>(T input, string? message = null, Exception? exception = null) where T : struct, IComparable<T>
     {
         Forbid.From.Null(input);
-        ForbidDefaultExtensions.Negative(input, message, exception);
+        ForbidNegativeExtensions.Negative(input, message, exception);
         ForbidZeroExtensions.Zero(input, message, exception);
         return input;
     }
