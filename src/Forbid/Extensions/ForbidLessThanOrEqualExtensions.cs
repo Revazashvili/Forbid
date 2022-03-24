@@ -54,7 +54,7 @@ public static class ForbidLessThanOrEqualExtensions
     {
         Forbid.From.Null(x);
         Forbid.From.Null(y);
-        ForbidDefaultExtensions.Equal(x, y, message, exception);
+        ForbidEqualExtensions.Equal(x, y, message, exception);
         if (x.CompareTo(y) < 0)
             Thrower.ThrowWithPriority(nameof(x), message, exception);
         return x;

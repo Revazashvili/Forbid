@@ -59,7 +59,7 @@ public static class ForbidRangeExtensions
         Forbid.From.Null(x);
         Forbid.From.Null(from);
         Forbid.From.Null(to);
-        ForbidDefaultExtensions.Equal(from, to, message, exception);
+        ForbidEqualExtensions.Equal(from, to, message, exception);
         // if (from < x < to), then throw exception
         if (x.CompareTo(from) > 0 && x.CompareTo(to) < 0)
             Thrower.ThrowWithPriority(nameof(x), message, exception);
