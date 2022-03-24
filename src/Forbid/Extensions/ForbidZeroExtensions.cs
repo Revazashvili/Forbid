@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Forbids;
+﻿namespace Forbids;
 
 /// <summary>
 /// A collection of Zero forbid methods as extension methods.
