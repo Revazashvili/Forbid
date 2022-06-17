@@ -11,6 +11,16 @@ A simple package with extension methods to forbid some value matches,logical val
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
 
+## Installing
+Using dotnet cli
+```
+dotnet add package Forbid --version 1.0.4
+```
+or package reference
+```
+<PackageReference Include="Forbid" Version="1.0.4" />
+```
+
 ## Supported Methods
 * Null (throws if input is null.)
 * NullOrEmpty (throws if string,guid or IEnumerable<T> is null or empty.)
