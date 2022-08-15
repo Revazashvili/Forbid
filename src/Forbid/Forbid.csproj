@@ -26,10 +26,12 @@
     <ItemGroup>
         <None Include="..\..\LICENSE" >
             <Pack>True</Pack>
+            <PackagePath></PackagePath>
         </None>
         
         <None Include="..\..\docs\README.md">
             <Pack>True</Pack>
+            <PackagePath></PackagePath>
         </None>
     </ItemGroup>
     
