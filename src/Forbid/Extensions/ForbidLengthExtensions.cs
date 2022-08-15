@@ -9,7 +9,7 @@ public static class ForbidLengthExtensions
     /// <param name="input">The string to check length.</param>
     /// <param name="length">The length to be checked.</param>
     /// <returns>The passed input.</returns>
-    public static string Length(this Forbid forbid, string input, int length) => Length(input, length);
+    public static string Length(this IForbid forbid, string input, int length) => Length(input, length);
     
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> length is equal to passed length.
@@ -19,7 +19,7 @@ public static class ForbidLengthExtensions
     /// <param name="message">The message used to throw exception.</param>
     /// <param name="length">The length to be checked.</param>
     /// <returns>The passed input.</returns>
-    public static string Length(this Forbid forbid, string input, int length,string message) => Length(input, length,message);
+    public static string Length(this IForbid forbid, string input, int length,string message) => Length(input, length,message);
     
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> length is equal to passed length.
@@ -29,7 +29,7 @@ public static class ForbidLengthExtensions
     /// <param name="exception">The exception to throw.</param>
     /// <param name="length">The length to be checked.</param>
     /// <returns>The passed input.</returns>
-    public static string Length(this Forbid forbid, string input, int length,Exception exception) => Length(input, length,exception:exception);
+    public static string Length(this IForbid forbid, string input, int length,Exception exception) => Length(input, length,exception:exception);
     
     /// <summary>
     /// Throws <see cref="ArgumentException"/> if <paramref name="input"/> length is equal to passed length.
