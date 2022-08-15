@@ -15,7 +15,7 @@ namespace Forbid.UnitTests
         }
         
         [Fact]
-        public void Count_NotThrowWhenCountEqualsPassedCount()
+        public void Count_NotThrowWhenCountNotEqualsPassedCount()
         {
             IEnumerable<int> list = new List<int> { 1, 2, 3 };
             Forbids.Forbid.From.Count(list, 4);
