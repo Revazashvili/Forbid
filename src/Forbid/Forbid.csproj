@@ -15,10 +15,22 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageVersion>1.0.4</PackageVersion>
         <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <DocumentationFile>bin\Debug\Forbid.xml</DocumentationFile>
       <NoWarn>1701;1702;1591;1574</NoWarn>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="..\..\LICENSE" >
+            <Pack>True</Pack>
+        </None>
+        
+        <None Include="..\..\docs\README.md">
+            <Pack>True</Pack>
+        </None>
+    </ItemGroup>
+    
 </Project>

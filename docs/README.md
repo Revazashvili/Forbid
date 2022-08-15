@@ -1,24 +1,14 @@
 # Forbid
 A simple package with extension methods to forbid some value matches,logical values or ranges in .Net
 
-[![.NET](https://img.shields.io/badge/--512BD4?logo=.net&logoColor=ffffff)](https://dotnet.microsoft.com/)
-![Nuget](https://img.shields.io/nuget/dt/Forbid?color=blue)
-[![NuGet stable version](https://badgen.net/nuget/v/Forbid)](https://www.nuget.org/packages/Forbid)
-[![GitHub license](https://badgen.net/github/license/Revazashvili/Forbid)](https://github.com/Revazashvili/Forbid/blob/main/LICENSE)
-
-
-
-## Give a Star! :star:
-If you like or are using this project please give it a star. Thanks!
-
 ## Installing
 Using dotnet cli
 ```
-dotnet add package Forbid --version 1.0.4
+dotnet add package Forbid --version 1.0.5
 ```
 or package reference
 ```
-<PackageReference Include="Forbid" Version="1.0.4" />
+<PackageReference Include="Forbid" Version="1.0.5" />
 ```
 
 ## Supported Methods
@@ -43,7 +33,7 @@ or package reference
 * Count(throws if input count equals passed count.)
 * Length(throws if input string length equals passed length.)
 
-You can pass message or custom exception to methods. 
+You can pass message or custom exception to methods.
 
 ## Usage
 
@@ -116,4 +106,3 @@ public static class TestExtend
         }
     }
 ```
-or you can open a pull request and contribute to my project.
