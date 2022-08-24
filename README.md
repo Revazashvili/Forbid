@@ -14,11 +14,11 @@ If you like or are using this project please give it a star. Thanks!
 ## Installing
 Using dotnet cli
 ```
-dotnet add package Forbid --version 1.0.4
+dotnet add package Forbid --version 1.0.5
 ```
 or package reference
 ```
-<PackageReference Include="Forbid" Version="1.0.4" />
+<PackageReference Include="Forbid" Version="1.0.5" />
 ```
 
 ## Supported Methods
