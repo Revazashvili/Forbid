@@ -42,6 +42,7 @@ internal static class Thrower
     /// </summary>
     /// <param name="message">The message which will be thrown in <see cref="Exception"/>.</param>
     /// <param name="nameOf">The name of parameter. Used to throw <see cref="ArgumentException"/> if provided exception is null.</param>
+    /// <param name="exception">Provided <see cref="Exception"/> to be thrown.</param>
     /// <exception cref="Exception">Provided <see cref="Exception"/> to be thrown.</exception>
     /// <exception cref="ArgumentException"><see cref="ArgumentException"/> thrown if provided exception and message is null.</exception>
     internal static void ThrowWithPriority(string nameOf, string? message = null, Exception? exception = null)
