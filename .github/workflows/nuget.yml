@@ -7,6 +7,7 @@ on:
 
 env:
   PROJECT_PATH: 'src/Forbid/Forbid.csproj'
+  TEST_PROJECT_PATH: 'tests/Forbid.UnitTests/Forbid.UnitTests.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
   SOURCE_URL: https://api.nuget.org/v3/index.json
   BUILD_CONFIGURATION: Release
@@ -28,6 +29,9 @@ jobs:
 
       - name: Build
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration ${{ env.BUILD_CONFIGURATION }}
+
+      - name: Test
+        run: dotnet test ${{ env.TEST_PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }}
 
       - name: Get Version
         id: version
