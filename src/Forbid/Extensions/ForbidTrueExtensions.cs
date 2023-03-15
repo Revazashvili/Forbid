@@ -36,7 +36,6 @@ public static class ForbidTrueExtensions
     /// </summary>
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, params bool[] inputArray) => inputArray.ForEach(forbid.True);
 
@@ -46,7 +45,6 @@ public static class ForbidTrueExtensions
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, string message, params bool[] inputArray) => inputArray.ForEach(input => forbid.True(input, message));
 
@@ -56,7 +54,6 @@ public static class ForbidTrueExtensions
     /// <param name="forbid"><see cref="IForbid"/> interface.</param>
     /// <param name="exception">An <see cref="Exception"/> which will be thrown.</param>
     /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
-    /// <typeparam name="T">Any type of object.</typeparam>
     /// <returns><see cref="inputArray"/></returns>
     public static IEnumerable<bool> True(this IForbid forbid, Exception exception, params bool[] inputArray) => inputArray.ForEach(input => forbid.True(input, exception));
     
