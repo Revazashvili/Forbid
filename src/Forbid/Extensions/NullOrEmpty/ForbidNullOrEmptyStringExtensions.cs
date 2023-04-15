@@ -16,12 +16,12 @@ public static class ForbidNullOrEmptyStringExtensions
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentException"><see cref="Exception"/> which will be thrown if input is empty.</exception>
-    public static string NullOrEmpty(this IForbid forbid, string input)
+    public static string NullOrEmpty(this IForbid forbid, string? input)
     {
         Forbid.From.Null(input);
         if (input == Empty)
             throw new ArgumentException(null, nameof(input));
-        return input;
+        return input!;
     }
 
     /// <summary>
@@ -34,12 +34,12 @@ public static class ForbidNullOrEmptyStringExtensions
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentException"><see cref="Exception"/> which will be thrown if input is empty.</exception>
-    public static string NullOrEmpty(this IForbid forbid, string input, string message)
+    public static string NullOrEmpty(this IForbid forbid, string? input, string? message)
     {
         Forbid.From.Null(input, message);
         if (input == Empty)
             throw new ArgumentException(message);
-        return input;
+        return input!;
     }
 
     /// <summary>
@@ -51,12 +51,12 @@ public static class ForbidNullOrEmptyStringExtensions
     /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty.</exception>
-    public static string NullOrEmpty(this IForbid forbid, string input, Exception exception)
+    public static string NullOrEmpty(this IForbid forbid, string? input, Exception? exception)
     {
         Forbid.From.Null(input, exception);
         if (input == Empty)
             Thrower.ThrowIfNotNull(exception, nameof(input));
-        return input;
+        return input!;
     }
     
     #endregion

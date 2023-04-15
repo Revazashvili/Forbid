@@ -20,7 +20,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     {
         Forbid.From.Null(input);
         if (input == Guid.Empty)
-            throw new ArgumentException(nameof(input));
+            throw new ArgumentException(null, nameof(input));
         return input ?? default(Guid);
     }
 
@@ -34,7 +34,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
     /// <returns><see cref="Guid"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty guid.</exception>
-    public static Guid NullOrEmpty(this IForbid forbid, Guid? input, string message)
+    public static Guid NullOrEmpty(this IForbid forbid, Guid? input, string? message)
     {
         Forbid.From.Null(input, message);
         if (input == Guid.Empty)
@@ -51,7 +51,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
     /// <returns><see cref="Guid"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty guid.</exception>
-    public static Guid NullOrEmpty(this IForbid forbid, Guid? input, Exception exception)
+    public static Guid NullOrEmpty(this IForbid forbid, Guid? input, Exception? exception)
     {
         Forbid.From.Null(input, exception);
         if (input == Guid.Empty)

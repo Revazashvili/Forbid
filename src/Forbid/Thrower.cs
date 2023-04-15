@@ -28,7 +28,7 @@ internal static class Thrower
     /// <param name="nameOf">The name of parameter. Used to throw <see cref="ArgumentException"/> if provided exception is null.</param>
     /// <exception cref="Exception">Provided <see cref="Exception"/> to be thrown.</exception>
     /// <exception cref="ArgumentException"><see cref="ArgumentException"/> thrown if provided exception is null.</exception>
-    internal static void ThrowIfNotNull(string message, string nameOf)
+    internal static void ThrowIfNotNull(string? message, string nameOf)
     {
         if (!IsNullOrEmpty(message))
             throw new ArgumentException(message);

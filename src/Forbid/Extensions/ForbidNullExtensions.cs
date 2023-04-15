@@ -13,7 +13,7 @@
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
-        public static T Null<T>(this IForbid forbid, T input)
+        public static T Null<T>(this IForbid forbid, T? input)
         {
             if (input is null)
                 throw new ArgumentNullException(nameof(input));
@@ -29,11 +29,11 @@
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
         /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
-        public static T Null<T>(this IForbid forbid, T input,string message)
+        public static T Null<T>(this IForbid forbid, T? input,string? message)
         {
             if (input is null)
                 Thrower.ThrowIfNotNull(message,nameof(input));
-            return input;
+            return input!;
         }
         
         /// <summary>
@@ -44,11 +44,11 @@
         /// <param name="exception">An <see cref="Exception"/> which will be thrown if input is null.</param>
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="T"/> input.</returns>
-        public static T Null<T>(this IForbid forbid, T input,Exception exception)
+        public static T Null<T>(this IForbid forbid, T? input,Exception? exception)
         {
             if (input is null)
                 Thrower.ThrowIfNotNull(exception,nameof(input));
-            return input;
+            return input!;
         }
 
         /// <summary>
@@ -58,8 +58,8 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static IEnumerable<T> Null<T>(this IForbid forbid, params T[] inputArray) =>
-            inputArray.ForEach(forbid.Null);
+        public static IEnumerable<T> Null<T>(this IForbid forbid, params T?[] inputArray) =>
+            inputArray.ForEach(forbid.Null)!;
 
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.
@@ -69,8 +69,8 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static IEnumerable<T> Null<T>(this IForbid forbid, string message, params T[] inputArray) =>
-            inputArray.ForEach(input => forbid.Null(input, message));
+        public static IEnumerable<T> Null<T>(this IForbid forbid, string? message, params T?[] inputArray) =>
+            inputArray.ForEach(input => forbid.Null(input, message))!;
 
 
         /// <summary>
@@ -81,7 +81,7 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static IEnumerable<T> Null<T>(this IForbid forbid, Exception exception, params T[] inputArray) =>
-            inputArray.ForEach(input => forbid.Null(input, exception));
+        public static IEnumerable<T> Null<T>(this IForbid forbid, Exception? exception, params T?[] inputArray) =>
+            inputArray.ForEach(input => forbid.Null(input, exception))!;
     }
 }

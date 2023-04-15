@@ -17,12 +17,12 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     /// <returns><see cref="T"/> input.</returns>
     /// <returns><see cref="IEnumerable{T}"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty list.</exception>
-    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T> input)
+    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T>? input)
     {
         Forbid.From.Null(input);
-        if (!input.Any())
+        if (!input!.Any())
             throw new ArgumentException(nameof(input));
-        return input;
+        return input!;
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     /// <returns><see cref="T"/> input.</returns>
     /// <returns><see cref="IEnumerable{T}"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is empty list.</exception>
-    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T> input, string message)
+    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T>? input, string? message)
     {
         Forbid.From.Null(input, message);
         if (!input.Any())
@@ -55,7 +55,7 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     /// <returns><see cref="T"/> input.</returns>
     /// <returns><see cref="IEnumerable{T}"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null.</exception>
-    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T> input, Exception exception)
+    public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T>? input, Exception? exception)
     {
         Forbid.From.Null(input, exception);
         if (!input.Any())

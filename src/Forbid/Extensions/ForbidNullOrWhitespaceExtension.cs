@@ -13,11 +13,11 @@ public static class ForbidNullOrWhitespaceExtension
     /// <param name="input">The <see cref="IEnumerable{T}"/> which will be checked.</param>
     /// <returns><see cref="IEnumerable{T}"/> input.</returns>
     /// <exception cref="ArgumentException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
-    public static string NullOrWhitespace(this IForbid forbid, string input)
+    public static string NullOrWhitespace(this IForbid forbid, string? input)
     {
         Forbid.From.NullOrEmpty(input);
         if (IsNullOrWhiteSpace(input))
-            throw new ArgumentException(nameof(input));
+            throw new ArgumentException(null, nameof(input));
         return input;
     }
 
@@ -30,12 +30,12 @@ public static class ForbidNullOrWhitespaceExtension
     /// <param name="message">Optional custom message which will be used to throw exception.</param>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
-    public static string NullOrWhitespace(this IForbid forbid, string input, string message)
+    public static string NullOrWhitespace(this IForbid forbid, string? input, string? message)
     {
         Forbid.From.NullOrEmpty(input);
         if (IsNullOrWhiteSpace(input))
             Thrower.ThrowIfNotNull(message, nameof(input));
-        return input;
+        return input!;
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ public static class ForbidNullOrWhitespaceExtension
     /// <param name="exception">An <see cref="Exception"/> which will be thrown.</param>
     /// <returns><see cref="string"/> input.</returns>
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
-    public static string NullOrWhitespace(this IForbid forbid, string input, Exception exception)
+    public static string NullOrWhitespace(this IForbid forbid, string? input, Exception? exception)
     {
         Forbid.From.NullOrEmpty(input);
         if (IsNullOrWhiteSpace(input))
             Thrower.ThrowIfNotNull(exception, nameof(input));
-        return input;
+        return input!;
     }
 }
