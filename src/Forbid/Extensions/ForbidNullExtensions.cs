@@ -58,8 +58,11 @@
         /// <param name="inputArray">The <see cref="inputArray"/> which will be checked.</param>
         /// <typeparam name="T">The type of the elements of source.</typeparam>
         /// <returns><see cref="inputArray"/></returns>
-        public static IEnumerable<T> Null<T>(this IForbid forbid, params T?[] inputArray) =>
-            inputArray.ForEach(forbid.Null)!;
+        public static IEnumerable<T> Null<T>(this IForbid forbid, params T?[]? inputArray)
+        {
+            Forbid.From.NullOrEmpty(inputArray);
+            return inputArray!.ForEach(forbid.Null)!;
+        }
 
         /// <summary>
         /// Throws <see cref="ArgumentNullException"/> if one of input in <paramref name="inputArray"/> is null.

@@ -18,7 +18,7 @@ public static class ForbidNullOrWhitespaceExtension
         Forbid.From.NullOrEmpty(input);
         if (IsNullOrWhiteSpace(input))
             throw new ArgumentException(null, nameof(input));
-        return input;
+        return input!;
     }
 
     /// <summary>

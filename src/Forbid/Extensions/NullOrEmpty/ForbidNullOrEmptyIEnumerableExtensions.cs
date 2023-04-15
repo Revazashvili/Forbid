@@ -39,9 +39,9 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T>? input, string? message)
     {
         Forbid.From.Null(input, message);
-        if (!input.Any())
+        if (!input!.Any())
             throw new ArgumentException(message);
-        return input;
+        return input!;
     }
 
     /// <summary>
@@ -58,9 +58,9 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     public static IEnumerable<T> NullOrEmpty<T>(this IForbid forbid, IEnumerable<T>? input, Exception? exception)
     {
         Forbid.From.Null(input, exception);
-        if (!input.Any())
+        if (!input!.Any())
             Thrower.ThrowIfNotNull(exception, nameof(input));
-        return input;
+        return input!;
     }
     
     #endregion

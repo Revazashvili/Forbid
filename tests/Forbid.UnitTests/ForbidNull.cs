@@ -58,7 +58,7 @@ namespace Forbid.UnitTests
         [Fact]
         public void NullWithParams_NotThrowExceptionWhenNothingIsNull()
         {
-            int[] ints = {1,2,3,4,5,6,7,8,9,10};
+            int[]? ints = {1,2,3,4,5,6,7,8,9,10};
             Forbids.Forbid.From.Null(ints);
         }
     }
