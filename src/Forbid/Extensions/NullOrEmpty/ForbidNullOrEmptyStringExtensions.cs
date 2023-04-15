@@ -20,7 +20,7 @@ public static class ForbidNullOrEmptyStringExtensions
     {
         Forbid.From.Null(input);
         if (input == Empty)
-            throw new ArgumentException(nameof(input));
+            throw new ArgumentException(null, nameof(input));
         return input;
     }
 
