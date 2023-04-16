@@ -32,7 +32,7 @@ public static class ForbidNullOrWhitespaceExtension
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
     public static string NullOrWhitespace(this IForbid forbid, string? input, string? message)
     {
-        Forbid.From.NullOrEmpty(input);
+        Forbid.From.NullOrEmpty(input,message);
         if (IsNullOrWhiteSpace(input))
             Thrower.ThrowIfNotNull(message, nameof(input));
         return input!;
@@ -49,7 +49,7 @@ public static class ForbidNullOrWhitespaceExtension
     /// <exception cref="ArgumentNullException"><see cref="Exception"/> which will be thrown if input is null or whitespace.</exception>
     public static string NullOrWhitespace(this IForbid forbid, string? input, Exception? exception)
     {
-        Forbid.From.NullOrEmpty(input);
+        Forbid.From.NullOrEmpty(input,exception);
         if (IsNullOrWhiteSpace(input))
             Thrower.ThrowIfNotNull(exception, nameof(input));
         return input!;

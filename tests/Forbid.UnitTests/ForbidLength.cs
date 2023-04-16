@@ -24,12 +24,12 @@ public class ForbidLength
     public void Length_ThrowCustomExceptionWhenInputLengthEqualsPassedLength()
     {
         var input = "test";
-        var lengthException = new LengthException("Length should not be 4.");
-        Assert.Throws<LengthException>(() => Forbids.Forbid.From.Length(input, 4,lengthException));
+        var lengthException = new ForbidLengthException("Length should not be 4.");
+        Assert.Throws<ForbidLengthException>(() => Forbids.Forbid.From.Length(input, 4,lengthException));
     }
-}
-    
-public class LengthException : Exception
-{
-    public LengthException(string message) :base(message){}
+
+    private class ForbidLengthException : Exception
+    {
+        public ForbidLengthException(string message) :base(message){}
+    }
 }

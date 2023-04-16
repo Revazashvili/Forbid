@@ -25,12 +25,12 @@ public class ForbidCount
     public void Count_ThrowCustomExceptionWhenCountEqualsPassedCount()
     {
         IEnumerable<int> list = new List<int> { 1, 2, 3 };
-        var countException = new CountException("Count should not be 3.");
-        Assert.Throws<CountException>(() => Forbids.Forbid.From.Count(list,3,countException));
+        var countException = new ForbidCountException("Count should not be 3.");
+        Assert.Throws<ForbidCountException>(() => Forbids.Forbid.From.Count(list,3,countException));
     }
-}
 
-public class CountException : Exception
-{
-    public CountException(string message) : base(message) { }
+    private class ForbidCountException : Exception
+    {
+        public ForbidCountException(string message) : base(message) { }
+    }
 }
