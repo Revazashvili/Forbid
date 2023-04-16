@@ -52,6 +52,6 @@ internal static class ForbidThrower
         if (exception is not null)
             throw exception;
         if (!IsNullOrEmpty(message))
-            throw new ArgumentException(nameOf);
+            throw new ArgumentException(message);
     }
 }

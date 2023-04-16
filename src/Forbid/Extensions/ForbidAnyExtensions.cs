@@ -47,8 +47,16 @@ public static class ForbidAnyExtensions
     /// <returns><see cref="bool"/> value.</returns>
     private static IEnumerable<T> Any<T>(IEnumerable<T> input, Func<T, bool> predicate, string? message = null, Exception? exception = null)
     {
-        Forbid.From.Null(input);
-        Forbid.From.Null(predicate);
+        if (IsNullOrEmpty(message))
+        {
+            Forbid.From.Null(input, exception);
+            Forbid.From.Null(predicate,exception);
+        }
+        else
+        {
+            Forbid.From.Null(input, message);
+            Forbid.From.Null(predicate,message);
+        }
         if (input.Any(predicate))
             ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
