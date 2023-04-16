@@ -68,7 +68,7 @@ public static class ForbidFalseExtensions
     {
         Forbid.From.Null(input);
         if (!input)
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
     }
 }

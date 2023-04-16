@@ -59,7 +59,7 @@ public static class ForbidNullOrEmptyIEnumerableExtensions
     {
         Forbid.From.Null(input, exception);
         if (!input!.Any())
-            Thrower.ThrowIfNotNull(exception, nameof(input));
+            ForbidThrower.ThrowIfNotNull(exception, nameof(input));
         return input!;
     }
     

@@ -50,7 +50,7 @@ public static class ForbidAnyExtensions
         Forbid.From.Null(input);
         Forbid.From.Null(predicate);
         if (input.Any(predicate))
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
     }
 }

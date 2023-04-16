@@ -49,7 +49,7 @@ public static class ForbidNegativeExtensions
     {
         Forbid.From.Null(input);
         if (input.CompareTo(default(T)) < 0)
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
     }
 }

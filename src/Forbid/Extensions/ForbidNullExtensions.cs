@@ -32,7 +32,7 @@ public static class ForbidNullExtensions
     public static T Null<T>(this IForbid forbid, T? input,string? message)
     {
         if (input is null)
-            Thrower.ThrowIfNotNull(message,nameof(input));
+            ForbidThrower.ThrowIfNotNull(message,nameof(input));
         return input!;
     }
         
@@ -47,7 +47,7 @@ public static class ForbidNullExtensions
     public static T Null<T>(this IForbid forbid, T? input,Exception? exception)
     {
         if (input is null)
-            Thrower.ThrowIfNotNull(exception,nameof(input));
+            ForbidThrower.ThrowIfNotNull(exception,nameof(input));
         return input!;
     }
 

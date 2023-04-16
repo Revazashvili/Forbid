@@ -52,7 +52,7 @@ public static class ForbidNotEqualExtensions
         Forbid.From.Null(x);
         Forbid.From.Null(y);
         if (!EqualityComparer<T>.Default.Equals(x, y))
-            Thrower.ThrowWithPriority(nameof(x), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(x), message, exception);
         return x;
     }
 }

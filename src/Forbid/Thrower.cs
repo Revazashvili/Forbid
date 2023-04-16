@@ -3,7 +3,7 @@
 /// <summary>
 /// A collection of methods for throwing some kind of <see cref="Exception"/>.
 /// </summary>
-internal static class Thrower
+internal static class ForbidThrower
 {
     /// <summary>
     /// Throws provided exception if not null.

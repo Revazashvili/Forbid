@@ -50,7 +50,7 @@ public static class ForbidCountExtensions
         Forbid.From.Null(count);
 
         if (input.Count() == count)
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
     }
 }

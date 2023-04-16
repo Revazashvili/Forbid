@@ -44,7 +44,7 @@ public static class ForbidLengthExtensions
         Forbid.From.NullOrEmpty(input);
         var inputLength = input.Length;
         if(inputLength == length)
-            Thrower.ThrowWithPriority(nameof(input),message,exception);
+            ForbidThrower.ThrowWithPriority(nameof(input),message,exception);
         return input;
     }
 }

@@ -55,7 +55,7 @@ public static class ForbidNullOrEmptyGuidExtensions
     {
         Forbid.From.Null(input, exception);
         if (input == Guid.Empty)
-            Thrower.ThrowIfNotNull(exception, nameof(input));
+            ForbidThrower.ThrowIfNotNull(exception, nameof(input));
         return input ?? default(Guid);
     }
 

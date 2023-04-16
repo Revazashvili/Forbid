@@ -55,7 +55,7 @@ public static class ForbidNullOrEmptyStringExtensions
     {
         Forbid.From.Null(input, exception);
         if (input == Empty)
-            Thrower.ThrowIfNotNull(exception, nameof(input));
+            ForbidThrower.ThrowIfNotNull(exception, nameof(input));
         return input!;
     }
     

@@ -62,7 +62,7 @@ public static class ForbidRangeExtensions
         ForbidEqualExtensions.Equal(from, to, message, exception);
         // if (from < x < to), then throw exception
         if (x.CompareTo(from) > 0 && x.CompareTo(to) < 0)
-            Thrower.ThrowWithPriority(nameof(x), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(x), message, exception);
         return x;
     }
 }

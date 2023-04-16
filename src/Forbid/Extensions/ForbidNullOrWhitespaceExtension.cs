@@ -34,7 +34,7 @@ public static class ForbidNullOrWhitespaceExtension
     {
         Forbid.From.NullOrEmpty(input,message);
         if (IsNullOrWhiteSpace(input))
-            Thrower.ThrowIfNotNull(message, nameof(input));
+            ForbidThrower.ThrowIfNotNull(message, nameof(input));
         return input!;
     }
 
@@ -51,7 +51,7 @@ public static class ForbidNullOrWhitespaceExtension
     {
         Forbid.From.NullOrEmpty(input,exception);
         if (IsNullOrWhiteSpace(input))
-            Thrower.ThrowIfNotNull(exception, nameof(input));
+            ForbidThrower.ThrowIfNotNull(exception, nameof(input));
         return input!;
     }
 }

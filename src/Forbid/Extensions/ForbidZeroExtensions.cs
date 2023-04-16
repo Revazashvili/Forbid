@@ -84,7 +84,7 @@ public static class ForbidZeroExtensions
     {
         Forbid.From.Null(input);
         if (EqualityComparer<T>.Default.Equals(input, default))
-            Thrower.ThrowWithPriority(nameof(input), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(input), message, exception);
         return input;
     }
 }

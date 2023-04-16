@@ -55,7 +55,7 @@ public static class ForbidMoreThanExtensions
         Forbid.From.Null(x);
         Forbid.From.Null(y);
         if (x.CompareTo(y) > 0)
-            Thrower.ThrowWithPriority(nameof(x), message, exception);
+            ForbidThrower.ThrowWithPriority(nameof(x), message, exception);
         return x;
     }
 }
